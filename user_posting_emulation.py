@@ -59,11 +59,23 @@ def run_infinite_post_data_loop():
             print(geo_result)
             print(user_result)
 
+            invoke_url_pin = "https://7txpgfi8ok.execute-api.us-east-1.amazonaws.com/dev/topics/12951463f185.pin"
+            invoke_url_geo = "https://7txpgfi8ok.execute-api.us-east-1.amazonaws.com/dev/topics/12951463f185.geo"
+            invoke_url_user = "https://7txpgfi8ok.execute-api.us-east-1.amazonaws.com/dev/topics/12951463f185.user"
+
+            headers = {'Content-Type': 'application/vnd.kafka.json.v2+json'}
+            response_pin = requests.request("POST", invoke_url_pin, headers=headers, data=pin_result)
+            print(response_pin.status_code)
+            response_geo = requests.request("POST", invoke_url_geo, headers=headers, data=geo_result)
+            response_user = requests.request("POST", invoke_url_user, headers=headers, data=user_result)
+
 
 if __name__ == "__main__":
     run_infinite_post_data_loop()
     print('Working')
     
     
+
+
 
 
