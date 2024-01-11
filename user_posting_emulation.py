@@ -55,6 +55,7 @@ def run_infinite_post_data_loop():
             
             for row in geo_selected_row:
                 geo_result = dict(row._mapping)
+                geo_result['timestamp'] = geo_result['timestamp'].isoformat()
                 payload_geo = json.dumps({
                 "records": [
                     {
@@ -68,6 +69,7 @@ def run_infinite_post_data_loop():
             
             for row in user_selected_row:
                 user_result = dict(row._mapping)
+                user_result['date_joined'] = user_result['date_joined'].isoformat()
                 payload_user = json.dumps({
                 "records": [
                     {
