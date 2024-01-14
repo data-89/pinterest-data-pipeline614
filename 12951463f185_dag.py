@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 #Define params for Submit Run Operator
 notebook_task = {
-    'notebook_path': '/Users/sofoodie05@gmail.com/Milestone 7: Batch processing',
+    'notebook_path': '/Users/sofoodie05@gmail.com/data_cleaning',
 }
 
 

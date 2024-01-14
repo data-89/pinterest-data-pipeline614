@@ -250,13 +250,15 @@ median_follower_count_by_year.show()
 
 # Find the median follower count of users that have joined between 2015 and 2020, based on which age group they are part of
 
+all_df_joined = all_df_joined.withColumn("post_year", year("date_joined"))
+
 # Filter the data for users who joined between 2015 and 2020
 filtered_df = (
-    age_groups_df
+    all_df_joined
     .filter((col("post_year") >= 2015) & (col("post_year") <= 2020))
 )
 
-# Group by 'age_group' and 'post_year' and calculate the median follower count for each combination
+# Group by 'age_group' and 'date_joined' and calculate the median follower count for each combination
 median_follower_count_by_age_and_year = (
     filtered_df
     .groupBy("age_group", "post_year")
