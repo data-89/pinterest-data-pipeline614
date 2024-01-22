@@ -44,7 +44,7 @@ def run_infinite_post_data_loop():
                 pin_result = dict(row._mapping)
                 payload_pin = json.dumps({
                 "StreamName": "streaming-12951463f185-pin",
-                "records":{
+                "Data":{
                           "index": pin_result["index"], "unique_id": pin_result["unique_id"], "title": pin_result["title"], "description": pin_result["description"], "poster_name": pin_result["poster_name"], "follower_count": pin_result["follower_count"], "tag_list": pin_result["tag_list"], "is_image_or_video": pin_result["is_image_or_video"], "image_src": pin_result["image_src"], "downloaded": pin_result["downloaded"], "save_location": pin_result["save_location"], "category": pin_result["category"]
                           },
                            "PartitionKey": "partition_pin"
@@ -71,7 +71,7 @@ def run_infinite_post_data_loop():
                 geo_result['timestamp'] = geo_result['timestamp'].isoformat()
                 payload_geo = json.dumps({
                 "StreamName": "streaming-12951463f185-geo",
-                "records":{
+                "Data":{
                     "ind": geo_result["ind"], "timestamp": geo_result["timestamp"], "latitude": geo_result["latitude"], "longitude": geo_result["longitude"], "country": geo_result["country"]
                     },
                     "PartitionKey": "partition_geo"
@@ -96,7 +96,7 @@ def run_infinite_post_data_loop():
                 user_result['date_joined'] = user_result['date_joined'].isoformat()
                 payload_user = json.dumps({
                 "StreamName": "streaming-12951463f185-geo",
-                "records":{
+                "Data":{
                     "ind": user_result["ind"], "first_name": user_result["first_name"], "last_name": user_result["last_name"], "age": user_result["age"], "date_joined": user_result["date_joined"]
                     },
                     "PartitionKey": "partition_user"
