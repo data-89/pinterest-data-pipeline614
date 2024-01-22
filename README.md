@@ -40,7 +40,7 @@ Task 2. Create a connector with MSK connect.
 
 Task 1. Build a Kafka REST proxy integration method for an API
 Task 2. Set up the Kafka REST proxy on the EC2 client
-Task 3. Send data to the API
+Task 3. Send data to the API (user_posting_emulation_streaming.py)
 
 
 ### Milestone 6. Batch processing: Databricks (databricks-s3-mount.py)
