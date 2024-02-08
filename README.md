@@ -55,11 +55,11 @@ Batch processing: configure the EC2 Kafka client
 - Task 2. Connect to the EC2 instance.
 - Task 3. Set up Kafka on the EC2 instance.
 - Task 4. Create Kafka topics.
-- Task 6: Find the user with most followers in each country
+- Task 6: Find the user with the most followers in each country
 - Task 7: Find the most popular category for different age groups
 - Task 8: Find the median follower count for different age groups
 - Task 9: Find how many users have joined each year?
-- Task 10: Find the median follower count of users based on thei joining year
+- Task 10: Find the median follower count of users based on their joining year
 - Task 11: Find the median follower count of users based on their joining year and age group
 
 ## Installation Instructions
@@ -410,6 +410,8 @@ Step 1: Create Data Streams
 Step 2: Set Up IAM Role
 - Create an IAM role (`<UserID-kinesis-role>`) with **AmazonKinesisFullAccess** policy and set up trust relationships. 
 
+![kinesis-trust-policy](https://github.com/data-89/pinterest-data-pipeline614/assets/145280164/e039747a-7d87-4b2b-b0f0-56225953ba49)
+
 > Make a note of the ARN of this role which will be denoted as `<awsKinesisARN>`
 
 Step 3: Integrate API Gateway with Kinesis
@@ -420,15 +422,13 @@ Step 4: Defining Methods
 - Configure the **Integration Request** with the necessary **headers** and **mapping template**. 
 - The **headers** should be defined as shown below.
 
-<div align="center">
-  <img src="/images/api-headers.png" alt="Kinesis_GET_Method">
-</div>
+![integration-request](https://github.com/data-89/pinterest-data-pipeline614/assets/145280164/279f0d2d-b885-416a-b5b9-3bf7aaf39af1)
+
 
 - The **Mapping Template** should be defined as shown below.
 
-<div align="center">
-  <img src="/images/mapping-template.png" alt="Mapping_Template">
-</div>
+![mapping-template](https://github.com/data-89/pinterest-data-pipeline614/assets/145280164/343451b4-3640-46ad-b534-376c43f29744)
+
 
 Step 5: Define Stream-Specific Methods
 - Under the `streams` resource, create a `{stream-name}` resource.
@@ -474,9 +474,8 @@ Step 6: Add Record Handling Methods
 Step 7: Deploy and Verify API Structure
 - Deploy the API to apply and activate the changes. Confirm the API structure is correct and matches the expected setup as shown below.
 
-<div align="center">
-  <img src="/images/api-structure.png" alt="API_Structure">
-</div>
+![resources](https://github.com/data-89/pinterest-data-pipeline614/assets/145280164/b647544b-924b-4bbc-9b4b-a35235074b62)
+
 
 
 ## Usage Instructions
